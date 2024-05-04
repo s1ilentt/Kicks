@@ -1,0 +1,246 @@
+.productCard {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	padding: 16px;
+	background-color: rgb(250, 250, 250);
+	border-radius: 16px;
+	cursor: pointer;
+
+	@media (max-width: 1100.98px) {
+		padding: 14px;
+		row-gap: 12px;
+	}
+
+	@media (max-width: 610.98px) {
+		row-gap: 16px;
+		padding: 16px;
+	}
+}
+
+.prodcutInfo {
+	display: flex;
+	column-gap: 16px;
+
+	@media (max-width: 1100.98px) {
+		column-gap: 12px;
+	}
+
+	@media (max-width: 610.98px) {
+		column-gap: 16px;
+	}
+}
+
+.productImageWrapper {
+	flex: 0 0 95px;
+	border-radius: 12px;
+	overflow: hidden;
+
+	@media (max-width: 1100.98px) {
+		flex: 0 0 80px;
+	}
+
+	@media (max-width: 610.98px) {
+		flex: 0 0 95px;
+	}
+}
+
+.productImageWrapper img {
+	width: 95px;
+	height: 95px;
+
+	@media (max-width: 1100.98px) {
+		width: 80px;
+		height: 80px;
+	}
+
+	@media (max-width: 610.98px) {
+		width: 95px;
+		height: 95px;
+	}
+}
+
+.infoTitle {
+	margin: 0 0 2px 0;
+	line-height: 1.375rem;
+
+	@media (max-width: 1100.98px) {
+		font-size: 0.875rem;
+		line-height: 1.125rem;
+	}
+
+	@media (max-width: 610.98px) {
+		font-size: 1rem;
+		line-height: 1.375rem;
+	}
+}
+
+.infoType {
+	margin: 0 0 12px 0;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 0.875rem;
+	line-height: 1.1875rem;
+
+	@media (max-width: 1100.98px) {
+		margin: 0 0 8px 0;
+	}
+
+	@media (max-width: 610.98px) {
+		margin: 0 0 12px 0;
+	}
+}
+
+.infoPrice {
+	font-family: 'Rubik';
+	font-size: 0.875rem;
+	line-height: 1.0625rem;
+	font-weight: 500;
+}
+
+.description {
+	flex: 1 1 auto;
+}
+
+.descriptionTitle {
+	margin: 0 0 4px 0;
+	line-height: 1.375rem;
+}
+
+.descriptionText {
+	color: rgba(35, 35, 33, 0.6);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 19px;
+}
+
+.productStatistics {
+	padding: 16px;
+	border: 1px solid rgba(35, 35, 33, 0.25);
+	border-radius: 8px;
+
+	@media (max-width: 1100.98px) {
+		padding: 12px;
+	}
+
+	@media (max-width: 610.98px) {
+		padding: 16px;
+	}
+}
+
+.salesRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.salesText {
+	color: rgba(35, 35, 33, 0.7);
+	font-size: 0.9375rem;
+	line-height: 1.1875rem;
+
+	@media (max-width: 1100.98px) {
+		font-size: 0.875rem;
+	}
+
+	@media (max-width: 610.98px) {
+		font-size: 0.9375rem;
+	}
+
+	@media (max-width: 350.98px) {
+		font-size: 0.875rem;
+	}
+}
+
+.salesCountBlock {
+	display: flex;
+	column-gap: 8px;
+	align-items: center;
+}
+
+.salesCount {
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 0.875rem;
+	line-height: 1.1875rem;
+}
+
+.productStatistics hr {
+	margin: 8px 0;
+	border: none;
+	height: 1px;
+	background-color: rgba(35, 35, 33, 0.8);
+}
+
+.remainingProductsRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 4px;
+}
+
+.remainingProductsText {
+	color: rgba(35, 35, 33, 0.7);
+	font-size: 0.9375rem;
+	line-height: 1.1875rem;
+
+	@media (max-width: 1100.98px) {
+		font-size: 0.875rem;
+	}
+
+	@media (max-width: 610.98px) {
+		font-size: 0.9375rem;
+	}
+
+	@media (max-width: 350.98px) {
+		font-size: 0.875rem;
+	}
+}
+
+.remainingProductsCountBlock {
+	display: flex;
+	column-gap: 8px;
+	align-items: center;
+
+	@media (max-width: 1100.98px) {
+		column-gap: 6px;
+	}
+
+	@media (max-width: 610.98px) {
+		column-gap: 8px;
+	}
+
+	@media (max-width: 350.98px) {
+		column-gap: 6px;
+	}
+}
+
+.remainingProductsProgress {
+	width: 52px;
+	height: 4px;
+	border-radius: 8px;
+	background: rgb(231, 231, 227);
+
+	@media (max-width: 1100.98px) {
+		width: 48px;
+	}
+
+	@media (max-width: 610.98px) {
+		width: 52px;
+	}
+
+	@media (max-width: 350.98px) {
+		width: 48px;
+	}
+}
+
+.remainingProductsProgressBar {
+	height: 100%;
+	width: 60%;
+	border-radius: 8px;
+	background: rgb(255, 165, 47);
+}
+
+.remainingProductsCount {
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 0.875rem;
+	line-height: 1.1875rem;
+}

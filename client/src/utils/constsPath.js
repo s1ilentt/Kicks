@@ -1,0 +1,13 @@
+// Export constants with paths
+export const ADMIN_ROUTE = '/admin/';
+export const ADMIN_HOME_ROUTE = 'all-product';
+export const LOGIN_ROUTE = '/login';
+export const REGISTRATION_ROUTE = '/registration';
+export const LOGIN_ADMIN_ROUTE = 'login-admin';
+export const REGISTRATION_ADMIN_ROUTE = 'registration-admin';
+export const LANDING_ROUTE = '/';
+export const PRODUCT_ROUTE = '/product';
+export const PRODUCT_DETAIL_ROUTE = 'product-detail';
+export const PRODUCT_ADD_ROUTE = 'product-add';
+export const BASKET_ROUTE = '/basket';
+export const LISTING_ROUTE = '/listing';

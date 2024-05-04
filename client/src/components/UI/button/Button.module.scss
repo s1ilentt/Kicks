@@ -1,0 +1,34 @@
+.button {
+	display: flex;
+	height: 48px;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 8px;
+	background: var(--Blue, #4A69E2);
+	transition: background-color 0.3s ease 0s;
+	// Styles of the text
+	color: var(--White, #FFF);
+	font-family: 'Rubik';
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+}
+
+.button:hover {
+	@media (min-width: 1024px) {
+		background: var(--Blue, #5774e8);
+	}
+}
+
+.buttonBlack {
+	background: var(--Dark-Gray, #232321);
+	font-weight: 400;
+}
+
+.buttonBlack:hover {
+	@media (min-width: 1024px) {
+		background: var(--Dark-Gray, #383837);
+	}
+}

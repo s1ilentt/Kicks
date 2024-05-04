@@ -1,0 +1,105 @@
+.cardWrapper {
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 33.333%;
+	background-color: #FAFAFA;
+	width: 429px;
+	border-radius: 32px;
+	overflow: hidden;
+
+	@media (max-width: 580.98px) {
+		max-width: 100%;
+	}
+
+	@media (max-width: 400.98px) {
+		border-radius: 16px;
+	}
+}
+
+.cardProfile {
+	display: flex;
+	column-gap: 8px;
+}
+
+.cardInfo {
+	flex: 1 1 auto;
+	padding: 32px;
+
+	@media (max-width: 580.98px) {
+		padding: 24px;
+	}
+
+	@media (max-width: 400.98px) {
+		padding: 16px;
+	}
+}
+
+.cardHeader {
+	font-family: 'Rubik';
+	font-size: 24px;
+	margin-bottom: 8px;
+
+	@media (max-width: 400.98px) {
+		margin-bottom: 8px;
+		font-size: 20px;
+	}
+}
+
+.reviewText {
+	@media (max-width: 400.98px) {
+		flex: 1 1 auto;
+	}
+}
+
+.cardText {
+	color: rgba(35, 35, 33, 0.85);
+	font-weight: 400;
+	line-height: normal;
+	margin: 0;
+
+	@media (max-width: 400.98px) {
+		font-size: 14px;
+	}
+}
+
+.profileWrapperImage {
+	@media (max-width: 400.98px) {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.cardRaiting {
+	display: flex;
+	align-items: center;
+	margin: 8px 0 0 0;
+	column-gap: 4px;
+}
+
+.raitingList {
+	display: inline-flex;
+	padding: 0px;
+	margin: 0px;
+}
+
+.starIcon {
+	@media (max-width: 400.98px) {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.raitingValue {
+	padding: 1px 0 0 0;
+
+	@media (max-width: 400.98px) {
+		font-size: 14px;
+	}
+}
+
+.cardImageWrapper {
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 0 0 75.757576% 0;
+}

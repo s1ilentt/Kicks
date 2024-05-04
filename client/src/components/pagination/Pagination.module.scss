@@ -1,0 +1,110 @@
+.paginationList {
+	display: flex;
+	column-gap: 16px;
+	align-items: center;
+	padding: 0px;
+	margin: 0px;
+
+	@media (max-width: 767.98px) {
+		justify-content: center;
+	}
+}
+
+.paginationList button {
+	border: 1px solid rgb(35, 35, 33);
+	border-radius: 8px;
+	font-family: 'Inter';
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.0625rem;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s
+}
+
+.paginationList button:hover {
+	@media (min-width: 1024px) {
+		background-color: rgb(35, 35, 33);
+		color: rgb(255, 255, 255);
+	}
+}
+
+.previousButton {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	padding: 7px 16px 7px 36px;
+
+	@media (max-width: 500.98px) {
+		padding: 15px 23px;
+	}
+}
+
+.previousButton::before {
+	content: '';
+	position: absolute;
+	left: 15px;
+	top: 7px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	transform: rotate(180deg);
+	background-image: url('../../images/icon/arrow right.svg');
+	transition: all 0.3s ease 0s;
+}
+
+.previousButton:hover::before {
+	@media (min-width: 1024px) {
+		background-image: url('../../images/icon/arrow-right-white.svg');
+	}
+}
+
+.disabledPreviousButton {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.nextButton {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	padding: 7px 36px 7px 16px;
+
+	@media (max-width: 500.98px) {
+		padding: 15px 23px;
+	}
+}
+
+.nextButton::after {
+	content: '';
+	position: absolute;
+	right: 15px;
+	top: 7px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background-image: url('../../images/icon/arrow right.svg');
+	transition: all 0.3s ease 0s;
+}
+
+.nextButton:hover::after {
+	@media (min-width: 1024px) {
+		background-image: url('../../images/icon/arrow-right-white.svg');
+	}
+}
+
+.disabledNextButton {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.numberButton {
+	padding: 7px 16px;
+}
+
+.activeNumberButton {
+	background-color: rgb(35, 35, 33);
+	color: rgb(255, 255, 255);
+}

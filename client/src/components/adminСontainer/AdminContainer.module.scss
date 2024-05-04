@@ -1,0 +1,17 @@
+.adminContainer {
+	max-width: 1110px;
+	margin: 0 0 0 calc((100% - 1110px + 260px) / 2);
+
+	@media (max-width: 1380.98px) {
+		margin: 0 auto;
+	}
+
+	@media (max-width: 1140.98px) {
+		max-width: none;
+		padding: 0 15px;
+	}
+
+	@media (max-width: 430.98px) {
+		padding: 0 10px;
+	}
+}

@@ -1,0 +1,14 @@
+.select {
+	color: rgb(31, 26, 36);
+	font-family: 'Inter';
+	font-weight: 400;
+	color: rgb(196, 196, 196)
+}
+
+.select [class$='-singleValue'] {
+	overflow: visible;
+}
+
+.select [class$='-Input']::before {
+	display: none;
+}

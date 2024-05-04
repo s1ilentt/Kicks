@@ -1,0 +1,197 @@
+.searchPage {
+	position: absolute;
+	overflow-y: auto;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	height: calc(100vh - 100%);
+	z-index: 15;
+	background-color: #ffffff;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+	transform: translateY(-15px);
+	@media(min-width: 940.98px) {
+		display: none;
+	}
+}
+
+.searchPageActive {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.searchPageContainer {
+	max-width: 580px;
+	padding: 0 30px;
+	margin: 0 auto;
+	@media(max-width: 767.98px) {
+		padding: 0 20px;
+	}
+}
+
+.searchInput {
+	display: block;
+	background-color: #f6f6f6;
+	padding: 30px 0;
+	@media(max-width: 767.98px) {
+		padding: 25px 0;
+	}
+}
+
+.inputWrapper {
+	position: relative;
+	left: 0;
+	top: 0;
+	max-width: 520px;
+	margin: 0 auto;
+}
+
+
+.input {
+	transition: box-shadow 0.2s ease 0s;
+	width: 100%;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(217, 217, 217);
+	padding: 9px 50px 12px 40px;
+	@media(max-width: 767.98px) {
+		padding: 7px 50px 10px 40px;
+	}
+	@media(max-width: 400.98px) {
+		padding: 6px 50px 9px 35px;
+	}
+}
+
+.input:focus {
+	transition: box-shadow 0.2s ease 0s;
+	box-shadow:0px 0px 1px rgb(117, 117, 117);
+}
+
+
+.inputButton {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	width: 27px;
+	height: 27px;
+	position: absolute;
+	right: 15px;
+	top: 8.5px;
+	padding: 4px 5px 6px 5px;
+	border-radius: 50%;
+	background-color: #eeeeee;
+	transition: visibility 0.2s ease 0s, opacity 0.2s ease 0s;
+	@media(max-width: 767.98px) {
+		top: 6.5px;
+	}
+	@media(max-width: 400.98px) {
+		width: 20px;
+		height: 20px;
+		padding: 0 0 2px 0;
+		top: 9px;
+	}
+}
+
+.inputButtonActive {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+
+.cross {
+	width: 15px;
+	height: 15px;
+	@media(max-width: 400.98px) {
+		width: 13px;
+		height: 13px;
+	}
+}
+
+.cross * {
+	fill: rgb(119, 119, 119);
+}
+
+.searchBody{
+	display: block;
+	padding: 35px 0 20px;
+	@media(max-width: 450.98px) {
+		padding: 25px 0 10px;
+	}
+}
+
+.searchBodyHide {
+	display: none;
+}
+
+.inputBodyHeader {
+	font-family: 'Inter';
+	font-size: 0.75rem;
+	color: #AAAAAA;
+	margin-bottom: 0.3em;
+
+}
+
+.itemWrapper {
+	display: flex;
+	column-gap: 25px;
+	align-items: center;
+	padding: 15px;
+	@media(max-width: 400.98px) {
+		column-gap: 20px;
+		padding: 13px;
+	}
+}
+
+
+.searchList {
+	padding: 0;
+
+	/* For Webkit (Chrome, Safari, Opera) */
+	&::-webkit-scrollbar {
+		width: 4px;
+		@media (max-width: 1140.98px) {
+			width: 3px;
+		}
+	}
+
+	/* For a scroll slider */
+	&::-webkit-scrollbar-thumb {
+		background-color: #9d9d9d;
+		border-radius: 5px;
+	}
+
+	/* For the track of scrolling */
+	&::-webkit-scrollbar-track {
+		background-color: #f1f1f1;
+	}
+}
+
+.imageWrapper {
+	flex: 0 0 70px;
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 70px;
+
+}
+
+.productText {
+	font-weight: 400;
+	font-size: 0.875rem;
+	line-height: 1.25;
+}
+
+.productName {
+	font-size: 0.875rem;
+	color: #181818;
+	margin-bottom: 4px;
+	@media(max-width: 400.98px) {
+		margin-bottom: 0;
+	}
+}
+
+.productPrice {
+	color: #545454;
+	line-height: 1.5;
+}

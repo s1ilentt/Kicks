@@ -1,0 +1,250 @@
+.header {
+	white-space: nowrap;
+	color: var(--Dark-Gray, #232321);
+	font-family: 'Rubik';
+	font-size: 223.5px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+
+	@media(max-width: 1350.98px) {
+		text-align: center;
+		font-size: 16.5vw;
+	}
+
+	@media(max-width: 1110.98px) {
+		text-align: center;
+		font-size: 16.3vw;
+	}
+
+	@media(max-width: 767.98px) {
+		text-align: center;
+		font-size: 16vw;
+	}
+
+	@media(max-width: 550.98px) {
+		text-align: center;
+		font-size: 15.75vw;
+	}
+}
+
+.header span {
+	color: var(--Blue, #4A69E2);
+}
+
+.imageBlock {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	margin-top: 12px;
+	overflow: hidden;
+	padding: 0 0 56.818182% 0;
+
+	@media(max-width: 1110.98px) {
+		padding: 0 0 65% 0;
+	}
+	@media(max-width: 900.98px) {
+		padding: 0 0 75% 0;
+	}
+	@media(max-width: 650.98px) {
+		padding: 0 0 85% 0;
+	}
+	@media(max-width: 450.98px) {
+		padding: 0 0 106.703911% 0;
+	}
+	@media(max-width: 430.98px) {
+		margin-top: 6px;
+	}
+}
+
+.imageBlock::after {
+	content: 'Nike product of the year ';
+	position: absolute;
+	left: -87px;
+	top: 165px;
+	width: 237px;
+	transform: rotate(-90deg);
+	padding: 24px;
+	gap: 10px;
+	border-radius: 0px 0px 16px 16px;
+	background: var(--Dark-Gray, #232321);
+	color: var(--Gray, #E7E7E3);
+
+	@media(max-width: 1000.98px) {
+		display: none;
+	}
+}
+
+.text {
+	max-width: 490px;
+	position: absolute;
+	bottom: 48px;
+	left: 48px;
+
+	@media(max-width: 1110.98px) {
+		max-width: 400px;
+		bottom: 36px;
+		left: 36px;
+	}
+	@media(max-width: 900.98px) {
+		max-width: 300px;
+		bottom: 28px;
+		left: 28px;
+	}
+	@media(max-width: 650.98px) {
+		max-width: 250px;
+		bottom: 20px;
+		left: 20px;
+	}
+	@media(max-width: 500.98px) {
+		max-width: 200px;
+		bottom: 16px;
+		left: 16px;
+	}
+	@media(max-width: 360.98px) {
+		bottom: 12px;
+		left: 12px;
+	}
+}
+
+.name {
+	color: var(--White, #FFF);
+	font-family: 'Rubik';
+	font-size: 74px;
+	margin: 0;
+
+	@media(max-width: 1110.98px) {
+		font-size: 52px;
+	}
+	@media(max-width: 900.98px) {
+		font-size: 40px;
+	}
+	@media(max-width: 650.98px) {
+		font-size: 30px;
+	}
+	@media(max-width: 500.98px) {
+		font-size: 24px;
+	}
+	@media(max-width: 360.98px) {
+		font-size: 22px;
+	}
+}
+
+.descriptions {
+	margin-bottom: 24px;
+	font-weight: 500;
+	color: rgba(231, 231, 227, 1);
+	font-size: 24px;
+	line-height: normal;
+
+	@media(max-width: 1110.98px) {
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
+	@media(max-width: 900.98px) {
+		margin-bottom: 14px;
+		font-size: 18px;
+	}
+	@media(max-width: 650.98px) {
+		margin-bottom: 12px;
+		font-size: 16px;
+	}
+	@media(max-width: 500.98px) {
+		margin-bottom: 8px;
+		font-size: 14px;
+	}
+}
+
+
+
+.moreImage {
+	position: absolute;
+	bottom: 32px;
+	right: 32px;
+	@media(max-width: 1110.98px) {
+		bottom: 26px;
+		right: 26px;
+	}
+	@media(max-width: 900.98px) {
+		top: 26px;
+		bottom: auto;
+	}
+	@media(max-width: 650.98px) {
+		top: 20px;
+		right: 20px;
+	}
+	@media(max-width: 450.98px) {
+		top: auto;
+		bottom: 16px;
+		right: 16px;
+	}
+	@media(max-width: 360.98px) {
+		top: 14px;
+		right: 14px;
+		bottom: auto;
+	}
+}
+
+.moreImage div:first-child {
+	margin-bottom: 16px;
+	@media(max-width: 450.98px) {
+		margin-bottom: 8px;
+	}
+}
+
+.imageWrapper {
+	border-radius: 35px;
+	border: 3px solid var(--Gray, #E7E7E3);
+	@media(max-width: 1110.98px) {
+		border-radius: 27px;
+	}
+	@media(min-width: 1024px) {
+		cursor: url('../../../../images/icon/cursor-zoom.png'), auto;
+	}
+	@media(max-width: 800.98px) {
+		border-radius: 22px;
+	}
+	@media(max-width: 650.98px) {
+		border-radius: 18px;
+		border: 2px solid var(--Gray, #E7E7E3);
+	}
+	@media(max-width: 450.98px) {
+		border-radius: 12px;
+		border: 1px solid var(--Gray, #E7E7E3);
+	}
+}
+
+.imageWrapper img {
+	width: 154px;
+	height: 154px;
+	@media(max-width: 1110.98px) {
+		width: 120px;
+		height: 120px;
+	}
+	@media(max-width: 800.98px) {
+		width: 100px;
+		height: 100px;
+	}
+	@media(max-width: 650.98px) {
+		width: 85px;
+		height: 85px;
+	}
+	@media(max-width: 450.98px) {
+		width: 62px;
+		height: 62px;
+	}
+}
+
+.text .textButton {
+	width: 138px;
+	@media(max-width: 900.98px) {
+		width: 124px;
+		height: 40px;
+	}
+	@media(max-width: 500.98px) {
+		width: 112px;
+		height: 32px;
+		font-family: 'Inter';
+	}
+}

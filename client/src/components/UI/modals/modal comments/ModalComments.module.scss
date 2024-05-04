@@ -1,0 +1,90 @@
+.sliderModal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #E7E7E3;
+	top: 0;
+	left: 0;
+	z-index: 20;
+}
+
+.sliderModalHide {
+	display: none;
+}
+
+.body {
+	height: 100vh;
+	overflow: auto;
+}
+
+.sliderCrossButton {
+	position: absolute;
+	top: 20px;
+	right: 50px;
+	display: block;
+	z-index: 5;
+	padding: 10px;
+
+	@media (max-width: 500.98px) {
+		right: 20px;
+	}
+}
+
+.sliderCrossButton:hover .sliderCrossIcon::before {
+	@media (min-width: 1024px) {
+		background-color: red;
+	}
+}
+
+.sliderCrossButton:hover .sliderCrossIcon::after {
+	@media (min-width: 1024px) {
+		background-color: red;
+	}
+}
+
+.sliderCrossIcon {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+}
+
+.sliderCrossIcon::before,
+.sliderCrossIcon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 0;
+	width: 2px;
+	height: 100%;
+	background-color: #c2c2c2;
+	transition: background-color 0.3s ease 0s;
+}
+
+.sliderCrossIcon::after {
+	transform: rotate(45deg);
+}
+
+.sliderCrossIcon::before {
+	transform: rotate(-45deg);
+}
+
+.wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	column-gap: 16px;
+
+	@media (max-width: 1150.98px) {
+		padding: 100px 0 60px 0;
+		height: 100%;
+		flex-direction: column;
+		row-gap: 40px;
+	}
+
+	@media (max-width: 400.98px) {
+		padding: 80px 0 60px 0;
+	}
+}

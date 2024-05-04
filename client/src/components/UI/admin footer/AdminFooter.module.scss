@@ -1,0 +1,29 @@
+.adminFooter {
+	margin: 100px 0 0px 0;
+	padding: 0 0 52px 0;
+
+	@media (max-width: 1023.98px) {
+		margin: 80px 0 0px 0;
+		padding: 0 0 40px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 50px 0 0px 0;
+		padding: 0 0 28px 0;
+	}
+}
+
+.adminFooter hr {
+	margin: 0 0 16px 0;
+	border-color: rgba(35, 35, 33, 0.35);
+}
+
+.text {
+	text-align: center;
+	font-weight: 400;
+	line-height: 1.1875rem;
+
+	@media (max-width: 425.98px) {
+		font-size: 0.9375rem;
+	}
+}

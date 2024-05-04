@@ -1,0 +1,265 @@
+.adminSidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 20;
+	height: 100%;
+	width: 260px;
+	border-right: 1px solid rgba(35, 35, 33, 0.2);
+	background-color: rgb(250, 250, 250);
+
+	@media (max-width: 1380.98px) {
+		position: fixed;
+		height: 100vh;
+		width: 100%;
+		border-right: none;
+		background-color: rgba(0, 0, 0, 0);
+		transition: visibility 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+}
+
+.adminSidebarActive {
+	@media (max-width: 1380.98px) {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.blackVeil {
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: visibility 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateX(-100%);
+
+	@media (max-width: 1380.98px) {
+		display: block;
+	}
+}
+
+.adminSidebarActive .blackVeil {
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.crossButton {
+	display: none;
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	z-index: 10;
+	background-color: rgba(250, 250, 250, 0);
+}
+
+.adminSidebarActive .crossButton {
+	@media (max-width: 1380px) {
+		display: block;
+	}
+}
+
+.crossButton::after,
+.crossButton::before,
+.crossButton span {
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 100%;
+	height: 3px;
+	background: black;
+}
+
+.crossButton span {
+	width: 0;
+}
+
+.crossButton::before {
+	transform: rotate(-45deg);
+	top: calc(50% - 1px);
+}
+
+.crossButton::after {
+	transform: rotate(45deg);
+	bottom: calc(50% - 1px);
+}
+
+.wrapper {
+	padding: 32px 24px 0;
+
+	@media (max-width: 1380.98px) {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 260px;
+		overflow-y: auto;
+		border-right: 1px solid rgba(35, 35, 33, 0.2);
+		background-color: rgb(250, 250, 250);
+		transition: visibility 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+}
+
+.adminSidebarActive .wrapper {
+	@media (max-width: 1380.98px) {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.logoWrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.navLinks {
+	margin-top: 62px;
+}
+
+.navLinks a {
+	display: block;
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 16px 16px 16px 40px;
+	border-radius: 8px;
+	font-family: 'Rubik';
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.0625rem;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+	transition: all 0.2s linear 0s;
+}
+
+.navLinks a::after {
+	content: '';
+	position: absolute;
+	left: 16px;
+	top: 16px;
+	transition: all 0.2s linear 0s;
+	width: 16px;
+	height: 16px;
+	background: url('../../../images/icon/all-product.svg') center no-repeat;
+}
+
+.navLinks a:hover {
+	@media (min-width: 1024px) {
+		background-color: rgb(74, 105, 226);
+		color: rgb(255, 255, 255);
+	}
+}
+
+.navLinks a:hover::after {
+	@media (min-width: 1024px) {
+		background: url('../../../images/icon/all-product-white.svg') center no-repeat;
+	}
+}
+
+.navLinks .linkActive {
+	transition: all 0s linear 0.05s;
+	background-color: rgb(74, 105, 226);
+	color: rgb(255, 255, 255);
+}
+
+.navLinks .linkActive::after {
+	transition: all 0s linear 0.05s;
+	background: url('../../../images/icon/all-product-white.svg') center no-repeat;
+}
+
+.asideSpoiler {
+	margin-top: 48px;
+}
+
+.spoilerButton {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	font-family: 'Rubik';
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	text-align: left;
+}
+
+.spoilerButton::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	height: 24px;
+	width: 24px;
+	transition: transform 0.25s ease 0s;
+	background: url('../../../images/icon/arrow-down-big.svg') center no-repeat;
+}
+
+.spoilerList {
+	padding: 10px 0 0;
+	margin: 0;
+}
+
+.spoilerList li:not(:last-child) .typeButton {
+	padding: 8px 0;
+}
+
+.spoilerList li:last-child .typeButton {
+	padding: 8px 0 20px 0;
+}
+
+.typeButton {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.typeButton span {
+	font-size: 1.0625rem;
+	line-height: 1.375rem;
+	transition: all 0.08s ease 0s;
+}
+
+.typeButton:hover span {
+	@media (min-width: 1024px) {
+		color: rgb(91, 91, 91);
+	}
+}
+
+.activeTypeButton span {
+	color: rgb(91, 91, 91);
+}
+
+.typeCounter {
+	border-radius: 4px;
+	background: rgb(231, 231, 227);
+	padding: 8px 12px;
+	font-size: 0.875rem;
+	line-height: 1.1875rem;
+	transition: all 0.15s ease 0s;
+}
+
+.typeButton:hover .typeCounter {
+	@media (min-width: 1024px) {
+		color: rgb(255, 255, 255);
+		background: rgb(74, 105, 226);
+	}
+}
+
+.activeTypeButton .typeCounter {
+	color: rgb(255, 255, 255);
+	background: rgb(74, 105, 226);
+}

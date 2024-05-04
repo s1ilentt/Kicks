@@ -1,0 +1,103 @@
+.menu {
+	position: absolute;
+	overflow-y: auto;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	height: calc(100vh - 100%);
+	z-index: 15;
+	background-color: #ffffff;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-15px);
+	transition: visibility 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+
+	@media(min-width: 767.98px) {
+		display: none;
+	}
+}
+
+.menuActive {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.menuBody {
+	max-width: 640px;
+	padding: 50px 60px 40px;
+	margin: 0 auto;
+	font-size: 1.5rem;
+	font-weight: 400;
+	@media(max-width: 500.98px) {
+		padding: 35px 40px 40px;
+	}
+	@media(max-width: 375.98px) {
+		padding: 25px 30px 40px;
+	}
+}
+
+.menuBody ul {
+	margin: 0;
+}
+
+.menuList {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.menuListItem:first-child {
+	padding: 20px 0;
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.menuButton{
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	text-align: left;
+	width: 100%;
+	padding: 20px 0;
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+
+.menuButton::after {
+	position: absolute;
+	content: '';
+	right: 5px;
+	top: 0;
+	display: block;
+	transition: all 0.3s ease 0s;
+	width: 14px;
+	height: 100%;
+	background: url('../../../images/icon/arrowThin.svg') center no-repeat;
+}
+
+.menuSublist {
+	padding: 15px 30px 0;
+	font-size: 1.125rem;
+	@media(max-width: 500.98px) {
+		padding: 10px 30px 0;
+	}
+	@media(max-width: 410.98px) {
+		padding: 10px 20px 0;
+	}
+	@media(max-width: 375.98px) {
+		padding: 10px 25px 0;
+	}
+}
+
+.menuSublist li {
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.menuSublist a {
+	display: block;
+	padding: 15px 0;
+	@media(max-width: 375.98px) {
+		padding: 13px 0;
+	}
+}

@@ -1,0 +1,364 @@
+.authSection {
+	min-height: 100vh;
+	display: flex;
+	background-color: rgb(250, 250, 250);
+
+	@media (max-width: 767.98px) {
+		background: url('../../../images/admin/background-kicks-img-big.png') center center / 100% 100% no-repeat;
+	}
+}
+
+.imageColumn {
+	min-height: 100vh;
+	width: 50%;
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 0 0 53.809774% 0;
+
+	@media (max-width: 767.98px) {
+		display: none;
+	}
+}
+
+.logoWrapper {
+	position: absolute;
+	left: calc(50% - 248px / 2);
+	top: 9%;
+
+	@media (max-width: 1100.98px) {
+		left: calc(50% - 188px / 2);
+	}
+}
+
+.logo {
+	width: 248px;
+	height: 62px;
+
+	@media (max-width: 1100.98px) {
+		width: 188px;
+		height: 47px;
+	}
+}
+
+.formColumn {
+	flex: 0 1 50%;
+	position: relative;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (max-width: 767.98px) {
+		flex: 0 1 auto;
+	}
+}
+
+.form {
+	flex: 0 1 570px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+	padding: 0 10px 0 0;
+
+	@media (max-width: 1400.98px) {
+		flex: 0 1 490px;
+	}
+
+	@media (max-width: 1023.98px) {
+		flex: 0 1 360px;
+		row-gap: 18px;
+	}
+
+	@media (max-width: 767.98px) {
+		row-gap: 24px;
+		padding: 10px 15px;
+		flex: 0 1 auto;
+	}
+
+	@media (max-width: 425.98px) {
+		row-gap: 18px;
+		padding: 10px;
+	}
+}
+
+.exitButtonWrapper {
+	position: absolute;
+	top: 20px;
+	right: 50px;
+
+	@media (max-width: 767.98px) {
+		top: 7px;
+		right: 25px;
+	}
+}
+
+.logOutButton {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	padding: 8px 0;
+	width: 110px;
+	font-family: 'Inter';
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.0625rem;
+	letter-spacing: 0.25px;
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.logOutButton:hover {
+	color: rgb(101, 101, 101);
+}
+
+.logOutButton:hover .exitIcon {
+	stroke: rgb(80, 80, 80);
+}
+
+.exitIcon {
+	position: absolute;
+	right: 0;
+	top: 9px;
+	width: 13px;
+	height: 15px;
+}
+
+.formHeader {
+	order: -2;
+}
+
+.formTitle {
+	margin: 0 0 8px 0;
+	font-family: 'Rubik';
+	font-size: 2.25rem;
+	line-height: 2.6875rem;
+
+	@media (max-width: 1023.98px) {
+		font-size: 2rem;
+		line-height: 2.4rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 2.25rem;
+		line-height: 2.6875rem;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 2rem;
+		line-height: 2.4rem;
+	}
+}
+
+.formText {
+	line-height: 1.375rem;
+	text-decoration-line: underline;
+}
+
+.formText:focus {
+	@media (max-width: 1023.98px) {
+		text-decoration-line: underline;
+	}
+}
+
+.inputsTitle {
+	font-family: 'Rubik';
+	font-size: 1.5rem;
+	line-height: 1.75rem;
+	margin: 0 0 20px 0;
+
+	@media (max-width: 1023.98px) {
+		margin: 0 0 16px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 0 0 20px 0;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 1.375rem;
+		margin: 0 0 14px 0;
+	}
+}
+
+.input {
+	display: block;
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid rgb(102, 102, 102);
+	border-radius: 8px;
+	color: rgb(31, 26, 36);
+	font-family: 'Inter';
+	font-weight: 400;
+	line-height: 1.1875rem;
+	letter-spacing: 0.5px;
+
+	@media (max-width: 450.98px) {
+		border-radius: 6px;
+		padding: 12px;
+	}
+}
+
+.errorText {
+	color: rgba(255, 38, 0, 0.85);
+	line-height: 1.25rem;
+	font-family: 'Inter';
+	font-weight: 400;
+	letter-spacing: 0.5px;
+}
+
+.input::placeholder {
+	color: rgb(121, 118, 124);
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+.checkboxBlock {
+	display: flex;
+	column-gap: 11px;
+	align-items: center;
+	line-height: 1.375rem;
+
+	@media (max-width: 767.98px) {
+		color: #ffffff
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 0.9375rem;
+		line-height: 1.3125rem;
+	}
+}
+
+.checkboxIcon {
+	flex: 0 0 18px;
+	height: 18px;
+	border-radius: 2px;
+	border: 2px solid black;
+	transition: background-color 0.15s ease 0s;
+}
+
+.checkboxIconActive {
+	background-color: rgb(0, 0, 0);
+	background-image: url('../../../images/icon/checked-icon.svg');
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+}
+
+.buttonLogin {
+	position: relative;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.buttonLogin button {
+	width: 100%;
+	padding: 0 16px;
+	font-weight: 500;
+	justify-content: flex-start;
+}
+
+.arrowIcon {
+	position: absolute;
+	right: 18px;
+	top: 18px;
+}
+
+.fromButtonsTitle {
+	font-size: 1.25rem;
+	line-height: 1.6875rem;
+	margin: 0 0 16px 0;
+
+	@media (max-width: 1023.98px) {
+		margin: 0 0 12px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 0 0 16px 0;
+	}
+
+	@media (max-width: 425.98px) {
+		margin: 0 0 12px 0;
+	}
+}
+
+.fromButtonsRegister {
+	order: -1;
+}
+
+.formButtons {
+	display: flex;
+	column-gap: 24px;
+
+	@media (max-width: 1023.98px) {
+		column-gap: 16px;
+	}
+
+	@media (max-width: 767.98px) {
+		column-gap: 24px;
+	}
+
+	@media (max-width: 425.98px) {
+		column-gap: 16px;
+	}
+}
+
+.formButtons a {
+	flex: 0 1 33.333%;
+}
+
+.companyButton {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 16px 0;
+	border: 1px solid rgb(35, 35, 33);
+	border-radius: 12px;
+	transition: background-color 0.3s ease 0s;
+
+	@media (max-width: 1023.98px) {
+		transition: none;
+		padding: 10px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 16px 0;
+		background-color: #ffffff;
+	}
+
+	@media (max-width: 425.98px) {
+		padding: 10px 0;
+	}
+}
+
+.companyButton:hover {
+	@media (min-width: 1024px) {
+		background-color: rgb(29, 29, 29);
+	}
+}
+
+.appleIcon * {
+	transition: fill 0.3s ease 0s;
+}
+
+.companyButton_apple:hover .appleIcon * {
+	@media (min-width: 1024px) {
+		fill: white;
+	}
+}
+
+.userAgreement {
+	line-height: 1.375rem;
+
+	@media (max-width: 767.98px) {
+		color: #ffffff
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 0.9375rem;
+	}
+}

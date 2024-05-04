@@ -1,0 +1,314 @@
+.input {
+	position: relative;
+	transition: transform 0.45s ease, border 0.3s ease;
+	transform: translate(100%, 0);
+	max-width: 225px;
+	background-color: rgb(223, 223, 223);
+	border-color: rgb(214, 214, 214);
+	padding: 6px 35px 6px 20px;
+	border-radius: 4px;
+
+	@media (max-width: 1140.98px) {
+		max-width: 200px;
+		padding: 4px 35px 4px 20px;
+	}
+
+	@media (max-width: 767.98px) {
+		max-width: 160px;
+		padding: 4px 30px 4px 17px;
+	}
+
+	@media (max-width: 500.98px) {
+		max-width: 140px;
+		padding: 4px 25px 4px 15px;
+	}
+}
+
+.input:focus {
+	transition: border-color 0.3s ease;
+	border: 1px solid rgb(169, 169, 169);
+}
+
+.inputActive {
+	transform: translate(0, 0);
+	transition: transform 0.45s ease, border-color 0.3s ease;
+}
+
+.label {
+	position: absolute;
+	top: 1px;
+	right: 0;
+	background-color: #FAFAFA;
+	cursor: pointer;
+	padding: 4px 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+	transition: background-color 0.07s ease 0.35s;
+
+	@media (max-width: 1140.98px) {
+		padding: 2px 4px 2px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 5px 4px 5px 0;
+	}
+}
+
+.labelActive {
+	transition: background-color 0.08s ease;
+	background-color: rgb(223, 223, 223);
+}
+
+.search {
+	position: absolute;
+	left: 0;
+	top: 4px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.1s ease, opacity 0.1s ease;
+
+	@media (max-width: 1140.98px) {
+		top: 2px;
+	}
+}
+
+.searchActive {
+	transition: visibility 0.1s ease 0.1s;
+	visibility: visible;
+	opacity: 1;
+}
+
+.search:hover * {
+	fill: rgb(88, 88, 88)
+}
+
+.cross {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.1s ease, opacity 0.1s ease;
+	width: 24px;
+	height: 24px;
+
+	@media (max-width: 767.98px) {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.crossActive {
+	fill: rgb(49, 49, 49);
+	transition: visibility 0.1s ease 0.1s;
+	visibility: visible;
+	opacity: 1;
+}
+
+.cross:hover * {
+	fill: rgb(92, 92, 92);
+}
+
+.inputWrapper {
+	position: relative;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+.adminInputBlock {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.inputBody {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	width: 360px;
+	padding: 30px 15px 30px 30px;
+	background-color: #ffffff;
+	visibility: hidden;
+	opacity: 0;
+	border-radius: 4px;
+	transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+	transform: translateY(10px);
+
+	@media (max-width: 1140.98px) {
+		top: 47px;
+		padding: 20px 15px 20px 20px;
+		width: 320px;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 15px 12px 15px 15px;
+		width: 260px;
+	}
+
+	@media (max-width: 500.98px) {
+		padding: 10px;
+		width: 210px;
+	}
+}
+
+.inputBodyActive {
+	transform: translateY(0);
+	visibility: visible;
+	opacity: 1;
+}
+
+.inputBodyHeader {
+	font-family: 'Inter';
+	font-size: 0.75rem;
+	color: #AAAAAA;
+	margin-bottom: 1em;
+
+	@media (max-width: 1140.98px) {
+		margin-bottom: 0.6em;
+	}
+
+	@media (max-width: 767.98px) {
+		margin-bottom: 0.5em;
+	}
+
+	@media (max-width: 500.98px) {
+		margin-bottom: 0.1em;
+	}
+}
+
+.itemWrapper {
+	display: flex;
+	max-width: 300px;
+	column-gap: 25px;
+	align-items: center;
+	padding: 15px;
+	border: 2px solid rgba(0, 0, 0, 0);
+	transition: border-color 0.15s ease 0s;
+
+	@media (max-width: 1140.98px) {
+		max-width: 270px;
+		padding: 10px;
+		column-gap: 20px;
+	}
+
+	@media (max-width: 767.98px) {
+		max-width: 220px;
+		padding: 5px;
+		column-gap: 13px;
+	}
+
+	@media (max-width: 500.98px) {
+		max-width: 185px;
+		padding: 3px;
+		column-gap: 10px;
+	}
+}
+
+.itemWrapper:hover {
+	@media (min-width: 1024px) {
+		border-color: rgba(0, 0, 0, 0.07);
+	}
+}
+
+.inputList {
+	max-height: 416px;
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+
+	/* For Webkit (Chrome, Safari, Opera) */
+	&::-webkit-scrollbar {
+		width: 4px;
+
+		@media (max-width: 1140.98px) {
+			width: 3px;
+		}
+
+		@media (max-width: 500.98px) {
+			width: 2px;
+		}
+	}
+
+	/* For a scroll slider */
+	&::-webkit-scrollbar-thumb {
+		background-color: #9d9d9d;
+		border-radius: 5px;
+	}
+
+	/* For the track of scrolling */
+	&::-webkit-scrollbar-track {
+		background-color: #f1f1f1;
+	}
+
+	@media (max-width: 1140.98px) {
+		max-height: 336px;
+	}
+
+	@media (max-width: 767.98px) {
+		max-height: 256px;
+	}
+
+	@media (max-width: 500.98px) {
+		max-height: 171px;
+	}
+}
+
+.imageWrapper {
+	flex: 0 0 70px;
+	position: relative;
+	left: 0;
+	top: 0;
+	height: 70px;
+
+	@media (max-width: 1140.98px) {
+		flex: 0 0 60px;
+		height: 60px;
+	}
+
+	@media (max-width: 767.98px) {
+		flex: 0 0 50px;
+		height: 50px;
+	}
+
+	@media (max-width: 500.98px) {
+		flex: 0 0 45px;
+		height: 45px;
+	}
+}
+
+.productText {
+	font-weight: 400;
+	font-size: 0.875rem;
+	line-height: 1.25;
+
+	@media (max-width: 767.98px) {
+		font-size: 0.75rem;
+	}
+}
+
+.productName {
+	font-size: 0.875rem;
+	color: #181818;
+	margin-bottom: 0;
+
+	@media (max-width: 767.98px) {
+		line-height: 1.15;
+		font-size: 0.8125rem;
+	}
+
+	@media (max-width: 500.98px) {
+		line-height: 1.25;
+		font-size: 0.75rem;
+	}
+}
+
+.productPrice {
+	color: #545454;
+	line-height: 1.5;
+
+	@media (max-width: 767.98px) {
+		line-height: 1.25;
+		margin-top: 3px;
+	}
+
+	@media (max-width: 500.98px) {
+		margin-top: 2px;
+	}
+}

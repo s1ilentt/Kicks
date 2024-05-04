@@ -1,0 +1,66 @@
+.header {
+	margin: 0 0 24px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 10px;
+
+	@media (max-width: 425.98px) {
+		margin: 0 0 18px 0;
+	}
+}
+
+.headerTitle {
+	margin: 0 0 4px 0;
+	font-family: 'Rubik';
+	font-size: 1.5rem;
+	line-height: 1.75rem;
+
+	@media (max-width: 425.98px) {
+		font-size: 1.25rem;
+		line-height: 1.5rem;
+	}
+}
+
+.headerRoutePath {
+	color: rgb(48, 48, 46);
+	line-height: 1.375rem;
+
+	@media (max-width: 425.98px) {
+		font-size: 0.875rem;
+	}
+}
+
+.headerButton {
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 0 26px 0 50px;
+
+	@media (max-width: 425.98px) {
+		padding: 0 16px;
+	}
+}
+
+.header .headerButton {
+	font-weight: 500;
+
+	@media (max-width: 425.98px) {
+		font-weight: 400;
+	}
+}
+
+.headerButton::before {
+	position: absolute;
+	content: '';
+	display: block;
+	left: 26px;
+	top: 15px;
+	width: 16px;
+	height: 16px;
+	background: url('../../../../images/icon/plus-in-circle.svg') center no-repeat;
+
+	@media (max-width: 425.98px) {
+		display: none;
+	}
+}
