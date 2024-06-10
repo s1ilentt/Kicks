@@ -568,3 +568,23 @@
 		background: var(--Yellow, #ffb555);
 	}
 }
+
+.adminButtonWrapper {
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 10px 0 0 10px;
+
+	@media (max-width: 1500.98px) {
+		display: none;
+	}
+}
+
+.navLinks .adminButton {
+	padding: 0 12px;
+	height: 34px;
+}
+
+.navLinks .adminButton:hover {
+	color: #ffffff;
+}

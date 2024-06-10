@@ -104,6 +104,7 @@ const AdminSidebar = observer(() => {
 					duration={250}
 					className={styles.asideSpoiler}
 					closeByClickOnDocument={false}
+					hideSpoilerInStart={false}
 				>
 					<button
 						className={`spoller-button ${styles.spoilerButton}`}

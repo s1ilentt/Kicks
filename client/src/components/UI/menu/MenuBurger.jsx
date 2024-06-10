@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Spoiler from '../spoiler/Spoiler';
 import { Context } from '../../..';
 import styles from './MenuBurger.module.scss';
@@ -10,8 +10,11 @@ import { useMediaQuery } from 'react-responsive';
 
 const MenuBurger = observer(({ isAnimActive, isButtonClick, hideFunction }) => {
 	const menuRef = useRef();
+	const { product } = useContext(Context);
 	const { allProducts } = useContext(Context);
 	const isWidthGreaterThanPermissible = useMediaQuery({ minWidth: 768 }); // We track the width of the viewport using media query
+
+	const router = useNavigate();
 
 	// With an open menu, block scrolling in the body
 	useEffect(() => {
@@ -60,6 +63,12 @@ const MenuBurger = observer(({ isAnimActive, isButtonClick, hideFunction }) => {
 		handleNavLinkClick();
 	}
 
+	const handleLinkType = (typeId) => {
+		product.setSelectedTypes([typeId]);
+		router(LISTING_ROUTE);
+		handleNavLinkClick();
+	}
+
 	return (
 		<div
 			ref={menuRef}
@@ -80,7 +89,13 @@ const MenuBurger = observer(({ isAnimActive, isButtonClick, hideFunction }) => {
 						</button>
 						<ul className={styles.menuSublist}>
 							{allProducts.types.map(type =>
-								<li key={type.id}>
+								<li
+									key={type.id}
+									onClick={() => {
+										handleLinkType(type.id);
+										product.setSelectedGenders(['men']);
+									}}
+								>
 									<NavLink onClick={linkHandler}>
 										{type.name}
 									</NavLink>
@@ -92,7 +107,13 @@ const MenuBurger = observer(({ isAnimActive, isButtonClick, hideFunction }) => {
 						</button>
 						<ul className={styles.menuSublist}>
 							{allProducts.types.map(type =>
-								<li key={type.id}>
+								<li
+									key={type.id}
+									onClick={() => {
+										handleLinkType(type.id);
+										product.setSelectedGenders(['women']);
+									}}
+								>
 									<NavLink onClick={linkHandler}>
 										{type.name}
 									</NavLink>

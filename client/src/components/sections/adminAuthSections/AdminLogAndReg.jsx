@@ -128,7 +128,7 @@ const AdminLogAndReg = observer(() => {
 			return false;
 		}
 
-		if (/[^\w\d]/.test(value)) {
+		if (/[^\w\d\u0400-\u04FF]/.test(value)) {
 			setPasswordErrorText('Password should not contain special characters');
 			return false;
 		}
@@ -292,7 +292,7 @@ const AdminLogAndReg = observer(() => {
 							<div className={styles.fromButtonsTitle}>Sign up with</div>
 						}
 						<div className={styles.formButtons}>
-							<a href='https://mail.google.com' target='_blank'>
+							<a href='https://mail.google.com' target='_blank' rel="noreferrer noopener">
 								<button
 									className={styles.companyButton}
 									type='button'
@@ -300,7 +300,7 @@ const AdminLogAndReg = observer(() => {
 									<GoogleIcon />
 								</button>
 							</a>
-							<a href='https://www.apple.com' target='_blank'>
+							<a href='https://www.apple.com' target='_blank' rel="noreferrer noopener">
 								<button
 									className={`${styles.companyButton} ${styles.companyButton_apple}`}
 									type='button'
@@ -308,7 +308,7 @@ const AdminLogAndReg = observer(() => {
 									<AppleIcon className={styles.appleIcon} />
 								</button>
 							</a>
-							<a href='https://www.facebook.com' target='_blank'>
+							<a href='https://www.facebook.com' target='_blank' rel="noreferrer noopener">
 								<button
 									className={styles.companyButton}
 									type='button'

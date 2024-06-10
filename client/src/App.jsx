@@ -7,6 +7,7 @@ import { check } from './http/userAPI.js';
 import { Spinner } from 'react-bootstrap';
 import { fetchTypes, fetchProducts, fetchBrands } from './http/productAPI';
 import AppRouter from './components/AppRouter';
+import { setFavicon } from './utils/favicoTheme';
 
 // Create main component
 const App = observer(() => {
@@ -20,7 +21,7 @@ const App = observer(() => {
 			.catch(err => console.log(err.response?.data.message, 'error'));
 		fetchBrands().then(data => allProducts.setBrands(data))
 			.catch(err => console.log(err.response?.data.message, 'error'));
-		fetchProducts(null, null, 1, 999, null, null, null).then(data => {
+		fetchProducts(null, null, 1, 999).then(data => {
 			allProducts.setProducts(data.rows);
 		})
 			.catch(err => console.log(err.response?.data.message, 'error'));
@@ -36,6 +37,10 @@ const App = observer(() => {
 			.catch(err => console.log(err.response?.data.message, 'error'))
 			.finally(() => setLoading(false));
 	}, [])
+
+	useEffect(() => {
+		setFavicon();
+	}, []);
 
 	if (loading) {
 		return (

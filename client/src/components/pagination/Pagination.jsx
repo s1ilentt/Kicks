@@ -5,11 +5,15 @@ import { observer } from 'mobx-react-lite';
 import { usePagination } from '../../hooks/usePagination';
 import { useMediaQuery } from 'react-responsive';
 import { handleNavLinkClick } from '../../utils/handleNavLinkClick';
+import { useLocation } from 'react-router-dom';
+import { LISTING_ROUTE } from '../../utils/constsPath';
 
-const Pagination = observer(() => {
+const Pagination = observer(({ scrollToProductList }) => {
 	const { product } = useContext(Context);
 	const isMobile = useMediaQuery({ maxWidth: 767 }); // We track the width of the viewport using media query
 	const isHideButtonText = useMediaQuery({ maxWidth: 500 });
+
+	const isListingPage = useLocation().pathname === LISTING_ROUTE;
 
 	// Calculating the total number of pages
 	const quantityPages = useMemo(() => {
@@ -22,14 +26,22 @@ const Pagination = observer(() => {
 	const handlePreviousButton = () => {
 		if (product.page !== 1) { // Check that the current page is not the first
 			product.setPage(product.page - 1); // Installation of the previous page
-			handleNavLinkClick();
+			if (!isListingPage) {
+				handleNavLinkClick();
+			} else {
+				scrollToProductList();
+			}
 		}
 	}
 
 	const handleNextButton = () => {
 		if (product.page < quantityPages) {  // Check that the current page is not the last
 			product.setPage(product.page + 1); // Installation of the next page
-			handleNavLinkClick();
+			if (!isListingPage) {
+				handleNavLinkClick();
+			} else {
+				scrollToProductList();
+			}
 		}
 	}
 
@@ -49,7 +61,11 @@ const Pagination = observer(() => {
 						className={`${styles.numberButton} ${product.page === number ? styles.activeNumberButton : ''}`}
 						onClick={() => {
 							product.setPage(number);
-							handleNavLinkClick();
+							if (!isListingPage) {
+								handleNavLinkClick();
+							} else {
+								scrollToProductList();
+							}
 						}}
 					>
 						{number}

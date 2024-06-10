@@ -13,7 +13,7 @@ import { useInView } from 'react-intersection-observer';
 import ModalComments from '../../../UI/modals/modal comments/ModalComments';
 
 const Reviews = () => {
-	const [blockInView, seiBlockInView] = useState(false);
+	const [blockInView, setBlockInView] = useState(false);
 	const [showIsModal, setShowIsModal] = useState(false);
 
 	const { ref, inView } = useInView({
@@ -24,7 +24,7 @@ const Reviews = () => {
 	// Loading elements when a block appears in the area of visibility
 	useEffect(() => {
 		if (inView) {
-			seiBlockInView(true);
+			setBlockInView(true);
 		}
 	}, [inView]);
 

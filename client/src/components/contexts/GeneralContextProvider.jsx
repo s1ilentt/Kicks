@@ -7,6 +7,8 @@ export const GeneralContext = createContext();
 export const GeneralContextProvider = ({ children }) => {
 	// Create state from tracking the intersection of elements
 	const [isBlack, setIsBlack] = useState(false);
+	// Create state from tracking loading the block product
+	const [isProductInfoBlockLoaded, setIsProductInfoBlockLoaded] = useState(false);
 	// Create state from Admin sidebar
 	const [isAdminSidebarActive, setIsAdminSidebarActive] = useState(false);
 
@@ -14,6 +16,8 @@ export const GeneralContextProvider = ({ children }) => {
 	const contextValue = {
 		isBlack,
 		setIsBlack,
+		isProductInfoBlockLoaded,
+		setIsProductInfoBlockLoaded,
 		isAdminSidebarActive,
 		setIsAdminSidebarActive,
 	};

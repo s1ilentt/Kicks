@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './Spoiler.module.css';
 
-const Spoiler = ({ children, duration, oneSpoller, closeByClickOnDocument = true, ...attrs }) => {
+const Spoiler = ({ children, duration, oneSpoller, closeByClickOnDocument = true, hideSpoilerInStart = true, ...attrs }) => {
 	const ref = useRef(); // We use a hook useRef to get a access for the main block of the component as a DOM element
 
 	// Using useEffect for the actions with spoilers and add the listener of events only if there are ref.current
@@ -22,8 +22,10 @@ const Spoiler = ({ children, duration, oneSpoller, closeByClickOnDocument = true
 
 				// Checking for the active class and hiding element by the class
 				spollerTitles.forEach(spollerTitle => {
-					if (!spollerTitle.classList.contains(styles.buttonActive)) {
+					if (!spollerTitle.classList.contains(styles.buttonActive) && hideSpoilerInStart) {
 						spollerTitle.nextElementSibling.hidden = true;
+					} else if (!spollerTitle.classList.contains(styles.buttonActive) && !hideSpoilerInStart) {
+						spollerTitle.classList.add(styles.buttonActive);// Add active class
 					}
 				})
 			}

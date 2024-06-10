@@ -1,0 +1,148 @@
+.alsoLikeSection {
+	padding: 128px 0 calc(60px - 45px) 0;
+	transition: opacity 0.6s ease-out 0s, visibility 0.6s ease-out 0s;
+	opacity: 0;
+	visibility: hidden;
+
+	@media (max-width: 1023.98px) {
+		padding: 80px 0 calc(50px - 45px) 0;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 55px 0 0 0;
+	}
+
+	@media (max-width: 500.98px) {
+		padding: 34px 0 calc(32px - 20px) 0;
+	}
+
+	@media (max-width: 500.98px) {
+		padding: 28px 0 calc(28px - 20px) 0;
+	}
+}
+
+.alsoLikeSectionInView {
+	opacity: 1;
+	visibility: visible;
+}
+
+
+.header {
+	margin: 0 0 32px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 10px;
+
+	@media (max-width: 500.98px) {
+		margin: 0 0 24px 0;
+	}
+
+	@media (max-width: 350.98px) {
+		margin: 0 0 20px 0;
+	}
+}
+
+.title {
+	margin: 0;
+	font-family: 'Rubik';
+	font-size: 3rem;
+	line-height: 1.1875;
+
+	@media (max-width: 1023.98px) {
+		font-size: 2.5rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 2.125rem;
+	}
+
+	@media (max-width: 500.98px) {
+		font-size: 1.75rem;
+	}
+
+	@media (max-width: 400.98px) {
+		font-size: 1.5rem;
+	}
+}
+
+.slideNavigationBlock {
+	align-self: center;
+	display: flex;
+	column-gap: 16px;
+
+	@media (max-width: 500.98px) {
+		column-gap: 12px;
+	}
+}
+
+.slideButtonPrev {
+	display: block;
+	border-radius: 8px;
+	padding: 11px 12px;
+	background-color: rgb(35, 35, 33);
+	transition: all 0.3s ease 0s;
+
+	@media (max-width: 500.98px) {
+		padding: 9px 10px;
+	}
+}
+
+.slideButtonPrevDisabled {
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+.slideButtonPrev:hover {
+	@media (min-width: 1024px) {
+		background-color: rgb(57, 57, 57);
+	}
+}
+
+.slideButtonNext {
+	display: block;
+	border-radius: 8px;
+	padding: 11px 12px;
+	background-color: rgb(35, 35, 33);
+	transition: all 0.3s ease 0s;
+
+	@media (max-width: 500.98px) {
+		padding: 9px 10px;
+	}
+}
+
+.slideButtonNextDisabled {
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+.slideButtonNext:hover {
+	@media (min-width: 1024px) {
+		background-color: rgb(57, 57, 57);
+	}
+}
+
+.arrowButtonPrev {
+	transform: rotate(180deg);
+}
+
+.swiper [class~='swiper-pagination'] {
+	bottom: 0px !important;
+}
+
+.swiper [class~='swiper-pagination-bullet'] {
+	margin: 0 4px;
+	width: 40px;
+	height: 6px;
+	border-radius: 8px;
+
+	@media (max-width: 500.98px) {
+		margin: 0 4px;
+		width: 32px;
+		height: 4px;
+	}
+}
+
+.swiper [class~='swiper-pagination-bullet-active'] {
+	background: rgb(74, 105, 226);
+}

@@ -8,6 +8,7 @@ import { Context } from '../../../..';
 import { useNavigate } from 'react-router-dom';
 import { LISTING_ROUTE } from '../../../../utils/constsPath';
 import { useInView } from 'react-intersection-observer';
+import { handleNavLinkClick } from '../../../../utils/handleNavLinkClick';
 
 const DontMiss = observer(() => {
 	const { allProducts } = useContext(Context);
@@ -35,7 +36,10 @@ const DontMiss = observer(() => {
 						Don’t miss out new drops
 					</h2>
 					<Button
-						onClick={() => { router(LISTING_ROUTE) }}
+						onClick={() => {
+							router(LISTING_ROUTE);
+							handleNavLinkClick();
+						}}
 						className={styles.button}
 					>
 						Shop New Drops

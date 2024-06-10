@@ -3,13 +3,12 @@ const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const {User, Basket} = require('../models/models');
-const process = require('../config.json');
 
 // Function for genarate jwt token
 const generateJwt = (id, email, role) => {
 	return jwt.sign(
 		{ id, email, role },
-		process.SECRET_KEY,
+		process.env.SECRET_KEY,
 		{expiresIn: '24h'}, // Time life token
 	)
 }

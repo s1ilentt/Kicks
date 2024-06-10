@@ -56,6 +56,7 @@ const AllProducts = observer(() => {
 			product.setPage(1);
 			product.setSelectedType(null);
 			product.setSelectedBrand(null);
+			product.setLimitOnePage(9);
 		}
 	}, []);
 

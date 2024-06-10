@@ -15,14 +15,21 @@ import Container from '../../../container/Container';
 import { ReactComponent as Arrow } from '../../../../images/icon/arrow right.svg';
 import { ReactComponent as DiagonalArrow } from '../../../../images/icon/diagonal arrow.svg';
 import { GeneralContext } from '../../../contexts/GeneralContextProvider';
+import { LISTING_ROUTE } from '../../../../utils/constsPath';
+import { handleNavLinkClick } from '../../../../utils/handleNavLinkClick';
+import { useNavigate } from 'react-router-dom';
+import { Context } from '../../../..';
+import { observer } from 'mobx-react-lite';
 
-const Categories = () => {
+const Categories = observer(() => {
+	const { product } = useContext(Context);
 	const [isSliderStart, setIsSliderStart] = useState(true);
 	const [isSliderEnd, setIsSliderEnd] = useState(false);
 	const [swiper, setSwiper] = useState(null); // We get a swiper from a state for the correct operation of its functions
 	const isMobile = useMediaQuery({ maxWidth: 767 }); // We track the width of the viewport using media query
 	const categoryRef = useRef(null);
 	const { isBlack, setIsBlack } = useContext(GeneralContext);
+	const router = useNavigate();
 
 	// Scroll processor to change the condition of isBlack
 	const handleScroll = () => {
@@ -73,6 +80,13 @@ const Categories = () => {
 		setIsSliderEnd(isEnd);
 	}
 
+	const handleSlideTypeClick = (typeId) => {
+		product.setSelectedTypes([typeId]);
+		router(LISTING_ROUTE);
+		setIsBlack(false);
+		handleNavLinkClick();
+	}
+
 	return (
 		<section ref={categoryRef} className={styles.categories}>
 			<Container>
@@ -119,7 +133,10 @@ const Categories = () => {
 							speed={500}
 						>
 							<SwiperSlide>
-								<div className={styles.slideWrapper}>
+								<div
+									className={styles.slideWrapper}
+									onClick={() => handleSlideTypeClick(1)}
+								>
 									<div className={styles.slideImage}>
 										<Image
 											className={styles.slideImageHover}
@@ -137,7 +154,10 @@ const Categories = () => {
 								</div>
 							</SwiperSlide>
 							<SwiperSlide>
-								<div className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}>
+								<div
+									className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}
+									onClick={() => handleSlideTypeClick(5)}
+								>
 									<div className={styles.slideImage}>
 										<Image
 											className={styles.slideImageHover}
@@ -155,7 +175,10 @@ const Categories = () => {
 								</div>
 							</SwiperSlide>
 							<SwiperSlide>
-								<div className={styles.slideWrapper}>
+								<div
+									className={styles.slideWrapper}
+									onClick={() => handleSlideTypeClick(3)}
+								>
 									<div className={styles.slideImage}>
 										<Image
 											className={styles.flipHorizontal}
@@ -173,7 +196,10 @@ const Categories = () => {
 								</div>
 							</SwiperSlide>
 							<SwiperSlide>
-								<div className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}>
+								<div
+									className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}
+									onClick={() => handleSlideTypeClick(7)}
+								>
 									<div className={styles.slideImage}>
 										<Image
 											className={styles.outdoorImage}
@@ -191,7 +217,10 @@ const Categories = () => {
 								</div>
 							</SwiperSlide>
 							<SwiperSlide>
-								<div className={`${styles.slideWrapper} ${styles.slideWrapperLeftLast}`}>
+								<div
+									className={`${styles.slideWrapper} ${styles.slideWrapperLeftLast}`}
+									onClick={() => handleSlideTypeClick(4)}
+								>
 									<div className={styles.slideImage}>
 										<Image
 											className={styles.flipHorizontal}
@@ -209,7 +238,10 @@ const Categories = () => {
 								</div>
 							</SwiperSlide>
 							<SwiperSlide>
-								<div className={`${styles.slideWrapper} ${styles.slideWrapperRightLast}`}>
+								<div
+									className={`${styles.slideWrapper} ${styles.slideWrapperRightLast}`}
+									onClick={() => handleSlideTypeClick(2)}
+								>
 									<div className={styles.slideImage}>
 										<Image
 											className={styles.flipHorizontal}
@@ -251,7 +283,10 @@ const Categories = () => {
 						>
 							<SwiperSlide>
 								<div className={styles.twoSlideWrapper}>
-									<div className={styles.slideWrapper}>
+									<div
+										className={styles.slideWrapper}
+										onClick={() => handleSlideTypeClick(1)}
+									>
 										<div className={styles.slideImage}>
 											<Image
 												className={styles.slideImageHover}
@@ -267,7 +302,10 @@ const Categories = () => {
 											/>
 										</button>
 									</div>
-									<div className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}>
+									<div
+										className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}
+										onClick={() => handleSlideTypeClick(5)}
+									>
 										<div className={styles.slideImage}>
 											<Image
 												className={styles.slideImageHover}
@@ -287,7 +325,10 @@ const Categories = () => {
 							</SwiperSlide>
 							<SwiperSlide>
 								<div className={styles.twoSlideWrapper}>
-									<div className={styles.slideWrapper}>
+									<div
+										className={styles.slideWrapper}
+										onClick={() => handleSlideTypeClick(3)}
+									>
 										<div className={styles.slideImage}>
 											<Image
 												className={styles.flipHorizontal}
@@ -303,7 +344,10 @@ const Categories = () => {
 											/>
 										</button>
 									</div>
-									<div className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}>
+									<div
+										className={`${styles.slideWrapper} ${styles.slideWrapperRight}`}
+										onClick={() => handleSlideTypeClick(7)}
+									>
 										<div className={styles.slideImage}>
 											<Image
 												className={styles.outdoorImage}
@@ -323,7 +367,10 @@ const Categories = () => {
 							</SwiperSlide>
 							<SwiperSlide>
 								<div className={styles.twoSlideWrapper}>
-									<div className={`${styles.slideWrapper} ${styles.slideWrapperLeftLast}`}>
+									<div
+										className={`${styles.slideWrapper} ${styles.slideWrapperLeftLast}`}
+										onClick={() => handleSlideTypeClick(4)}
+									>
 										<div className={styles.slideImage}>
 											<Image
 												className={styles.flipHorizontal}
@@ -339,7 +386,10 @@ const Categories = () => {
 											/>
 										</button>
 									</div>
-									<div className={`${styles.slideWrapper} ${styles.slideWrapperRightLast}`}>
+									<div
+										className={`${styles.slideWrapper} ${styles.slideWrapperRightLast}`}
+										onClick={() => handleSlideTypeClick(2)}
+									>
 										<div className={styles.slideImage}>
 											<Image
 												className={styles.flipHorizontal}
@@ -363,6 +413,6 @@ const Categories = () => {
 			</Container>
 		</section>
 	);
-}
+})
 
 export default Categories;

@@ -1,0 +1,29 @@
+.productGroup {
+	display: flex;
+	column-gap: 16px;
+
+	@media (max-width: 767.98px) {
+		display: grid;
+		grid-template-columns: minmax(100px, 250px) minmax(100px, 250px);
+		justify-content: space-around;
+		grid-template-rows: auto auto;
+		grid-row-gap: 40px;
+		grid-column-gap: 16px;
+	}
+
+	@media (max-width: 599.98px) {
+		grid-row-gap: 24px;
+	}
+
+	@media (max-width: 340.98px) {
+		grid-column-gap: 12px;
+	}
+}
+
+.productGroup>div {
+	flex: 0 1 25%;
+
+	@media (min-width: 768px) {
+		max-width: calc(25% - 16px * 3/4);
+	}
+}

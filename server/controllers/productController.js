@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const { Product, ProductInfo } = require('../models/models');
 const ApiError = require('../error/ApiError');
+const { Op } = require('sequelize');
 
 class ProductController {
 	async create(req, res, next) {
@@ -133,24 +134,46 @@ class ProductController {
 	}
 
 	async getAll(req, res) {
-		let { brandId, typeId, limit, page, gender, size, color } = req.query; // We get from a query line
+		let { brandId, typeId, limit, page, price, gender, size, color } = req.query; // We get from a query line
 		page = page || 1; // Number current page
 		limit = limit || 9; // Limit ptoduct on one page
 		let offset = page * limit - limit; // We consider how many goods we need to skip to get to the current page
 		let products;
 
 		// We check whether filtering parameters have been transmitted
-		if (!brandId && !typeId && !gender && !size && !color) {
+		if (!brandId && !typeId && !gender && !size && !color && !price && price !== 0) {
 			// If there are no filtering parameters, we get all the goods
 			products = await Product.findAndCountAll({ limit, offset });
 		} else {
 			// We form an object with the conditions for filtering
 			const where = {};
 			if (brandId) where.brandId = brandId;
-			if (typeId) where.typeId = typeId;
-			if (gender) where.gender = gender;
-			if (size) where.size = size;
-			if (color) where.color = color;
+
+			if (typeId && Array.isArray(typeId)) {
+				where.typeId = { [Op.in]: typeId }; // Filtering by type, if an array of values ​​is transmitted
+			} else if (typeId) {
+				where.typeId = typeId; // filtering by type, if one value is transmitted
+			}
+			if (gender && Array.isArray(gender)) {
+				where.gender = { [Op.in]: gender };  // Filtering by gender, if an array of values ​​is transmitted
+			} else if (gender) {
+				where.gender = gender; // Filtering by gender, if one value is transmitted
+			}
+			if (size && Array.isArray(size)) {
+				where.size = { [Op.overlap]: size };  // Filtering by sizes, if an array of values ​​is transmitted
+			} else if (size) {
+				where.size = size; // Filtering by sizes, if one value is transmitted
+			}
+			if (color && Array.isArray(color)) {
+				where.color = { [Op.in]: color };  // Filtering by color, if an array of values ​​is transmitted
+			} else if (color) {
+				where.color = color; // Filtering by color, if one value is transmitted
+			}
+			if (price !== undefined && price !== null) {
+				where.price = {
+					[Op.lte]: price // Specify the operator op.lte for filtering at a price that is less or equal to the specified upper border
+				};
+			}
 
 			// We carry out a request taking into account filtering
 			products = await Product.findAndCountAll({ where, limit, offset });
@@ -169,32 +192,6 @@ class ProductController {
 			count: products.count,
 			rows: productsWithInfo
 		});
-		//     // Проверяем, переданы ли значения для фильтрации по гендеру или размеру
-		// 	 if (gender && Array.isArray(gender)) {
-		// 		where.gender = { [Op.in]: gender }; // Фильтрация по гендеру, если передан массив значений
-		//   } else if (gender) {
-		// 		where.gender = gender; // Фильтрация по гендеру, если передано одно значение
-		//   }
-
-		//   if (size && Array.isArray(size)) {
-		// 		where.size = { [Op.in]: size }; // Фильтрация по размеру, если передан массив значений
-		//   } else if (size) {
-		// 		where.size = size; // Фильтрация по размеру, если передано одно значение
-
-
-
-		// if (!brandId && !typeId) {
-		// 	products = await Product.findAndCountAll({ limit, offset }); // Get all objects
-		// }
-		// if (brandId && !typeId) {
-		// 	products = await Product.findAndCountAll({ where: { brandId }, limit, offset }); // Filter by brand
-		// }
-		// if (!brandId && typeId) {
-		// 	products = await Product.findAndCountAll({ where: { typeId }, limit, offset }); // Filter by type
-		// }
-		// if (brandId && typeId) {
-		// 	products = await Product.findAndCountAll({ where: { typeId, brandId }, limit, offset }); // Filter by brand and type
-		// }
 	}
 
 	// Get one product

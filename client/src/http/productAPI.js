@@ -57,6 +57,16 @@ export const fetchProducts = async (brandId, typeId, page, limit) => {
 	return data;
 }
 
+// Get all products with params for listing page
+export const fetchProductsForListing = async (page, limit, brandId, typeId, price, gender, size, color) => {
+	const { data } = await $host.get('api/product', {
+		params: {
+			brandId, typeId, page, limit, price, gender, size, color // The parameters attached to the line of the query for sorting products
+		}
+	});
+	return data;
+}
+
 export const fetchOneProduct = async (id) => {
 	const { data } = await $host.get('api/product/' + id);
 	return data;

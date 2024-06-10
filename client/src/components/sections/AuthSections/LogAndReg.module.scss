@@ -1,0 +1,511 @@
+.contentWrapper {
+	display: flex;
+	justify-content: space-between;
+	column-gap: 30px;
+
+	@media(max-width: 767.98px) {
+		flex-direction: column;
+		row-gap: 35px;
+	}
+
+	@media(max-width: 450.98px) {
+		row-gap: 24px;
+	}
+}
+
+.formColumn {
+	flex: 0 1 560px;
+
+	@media(max-width: 767.98px) {
+		flex: 0 1 auto;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+
+	@media (max-width: 1023.98px) {
+		row-gap: 18px;
+	}
+
+	@media (max-width: 767.98px) {
+		row-gap: 24px;
+	}
+
+	@media (max-width: 425.98px) {
+		row-gap: 18px;
+	}
+}
+
+.formHeader {
+	order: -2;
+}
+
+.formTitle {
+	margin: 0 0 8px 0;
+	font-family: 'Rubik';
+	font-size: 2.25rem;
+	line-height: 2.6875rem;
+
+	@media (max-width: 1023.98px) {
+		font-size: 2rem;
+		line-height: 2.4rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 2.25rem;
+		line-height: 2.6875rem;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 2rem;
+		line-height: 2.4rem;
+	}
+
+	@media (max-width: 390.98px) {
+		font-size: 1.75rem;
+		line-height: 2rem;
+	}
+}
+
+.formText {
+	line-height: 1.375rem;
+	text-decoration-line: underline;
+}
+
+.formText:focus {
+	@media (max-width: 1023.98px) {
+		text-decoration-line: underline;
+	}
+}
+
+.inputsTitle {
+	font-family: 'Rubik';
+	font-size: 1.5rem;
+	line-height: 1.75rem;
+	margin: 0 0 20px 0;
+
+	@media (max-width: 1023.98px) {
+		margin: 0 0 16px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 0 0 20px 0;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 1.375rem;
+		margin: 0 0 14px 0;
+	}
+}
+
+.input {
+	display: block;
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid rgb(102, 102, 102);
+	border-radius: 8px;
+	color: rgb(31, 26, 36);
+	font-family: 'Inter';
+	font-weight: 400;
+	line-height: 1.1875rem;
+	letter-spacing: 0.5px;
+	background-color: transparent;
+
+	@media (max-width: 450.98px) {
+		border-radius: 6px;
+		padding: 12px;
+	}
+}
+
+.errorText {
+	color: rgba(255, 38, 0, 0.85);
+	line-height: 1.25rem;
+	font-family: 'Inter';
+	font-weight: 400;
+	letter-spacing: 0.5px;
+}
+
+.input::placeholder {
+	color: rgb(121, 118, 124);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: none;
+}
+
+.radioInputs {
+	display: flex;
+	column-gap: 45px;
+
+	@media (max-width: 900.98px) {
+		column-gap: 35px;
+	}
+
+	@media (max-width: 767.98px) {
+		column-gap: 45px;
+	}
+
+	@media (max-width: 425.98px) {
+		column-gap: 35px;
+	}
+}
+
+.radioBlock {
+	display: flex;
+	column-gap: 11px;
+	align-items: center;
+	line-height: 1.375rem;
+	cursor: pointer;
+	max-width: 200px;
+
+	@media (max-width: 425.98px) {
+		font-size: 0.9375rem;
+		line-height: 1.3125rem;
+	}
+}
+
+.radioBlock:hover {
+	@media (min-width: 1024px) {
+		color: rgb(82, 82, 82);
+	}
+}
+
+.radioIcon {
+	flex: 0 0 18px;
+	height: 18px;
+	border-radius: 2px;
+	border: 2px solid black;
+	transition: background-color 0s ease 0s;
+}
+
+.radioIconActive {
+	background-color: rgb(0, 0, 0);
+	background-image: url('../../../images/icon/checked-icon.svg');
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+	transition: background-color 0.15s ease 0s;
+}
+
+.checkboxBlock {
+	display: flex;
+	column-gap: 11px;
+	align-items: center;
+	line-height: 1.375rem;
+
+	@media (max-width: 425.98px) {
+		font-size: 0.9375rem;
+		line-height: 1.3125rem;
+	}
+}
+
+.checkboxIcon {
+	flex: 0 0 18px;
+	height: 18px;
+	border-radius: 2px;
+	border: 2px solid black;
+	transition: background-color 0.15s ease 0s;
+}
+
+.checkboxIconActive {
+	background-color: rgb(0, 0, 0);
+	background-image: url('../../../images/icon/checked-icon.svg');
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+}
+
+.buttonLogin {
+	position: relative;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.buttonLogin button {
+	width: 100%;
+	padding: 0 16px;
+	font-weight: 500;
+	justify-content: flex-start;
+}
+
+.arrowIcon {
+	position: absolute;
+	right: 18px;
+	top: 18px;
+}
+
+.fromButtonsTitle {
+	font-size: 1.25rem;
+	line-height: 1.6875rem;
+	margin: 0 0 16px 0;
+
+	@media (max-width: 1023.98px) {
+		margin: 0 0 12px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 0 0 16px 0;
+	}
+
+	@media (max-width: 425.98px) {
+		margin: 0 0 12px 0;
+	}
+}
+
+.fromButtonsRegister {
+	order: -1;
+}
+
+.formButtons {
+	display: flex;
+	column-gap: 24px;
+
+	@media (max-width: 1023.98px) {
+		column-gap: 16px;
+	}
+
+	@media (max-width: 767.98px) {
+		column-gap: 24px;
+	}
+
+	@media (max-width: 425.98px) {
+		column-gap: 16px;
+	}
+}
+
+.formButtons a {
+	flex: 0 1 33.333%;
+}
+
+.companyButton {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 16px 0;
+	border: 1px solid rgb(35, 35, 33);
+	border-radius: 12px;
+	transition: background-color 0.3s ease 0s;
+
+	@media (max-width: 1023.98px) {
+		transition: none;
+		padding: 10px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 16px 0;
+	}
+
+	@media (max-width: 425.98px) {
+		padding: 10px 0;
+	}
+}
+
+.companyButton:hover {
+	@media (min-width: 1024px) {
+		background-color: rgb(29, 29, 29);
+	}
+}
+
+.appleIcon * {
+	transition: fill 0.3s ease 0s;
+}
+
+.companyButton_apple:hover .appleIcon * {
+	@media (min-width: 1024px) {
+		fill: white;
+	}
+}
+
+.userAgreement {
+	line-height: 1.375rem;
+
+	@media (max-width: 425.98px) {
+		font-size: 0.9375rem;
+	}
+}
+
+.joinKicksClubColumn {
+	align-self: flex-start;
+	flex: 0 1 704px;
+	padding: 24px;
+	border-radius: 16px;
+	background: rgb(250, 250, 250);
+
+	@media (max-width: 900.98px) {
+		padding: 24px 16px;
+	}
+
+	@media (max-width: 767.98px) {
+		flex: 0 1 auto;
+		padding: 24px;
+	}
+
+	@media (max-width: 425.98px) {
+		padding: 16px;
+	}
+}
+
+.aboutTheClub {
+	margin: 0 0 64px 0;
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+
+	@media (max-width: 1250.98px) {
+		margin: 0 0 48px 0;
+	}
+
+	@media (max-width: 950.98px) {
+		margin: 0 0 36px 0;
+	}
+
+	@media (max-width: 830.98px) {
+		margin: 0 0 30px 0;
+	}
+
+	@media (max-width: 767.98px) {
+		margin: 0 0 36px 0;
+	}
+
+	@media (max-width: 425.98px) {
+		margin: 0 0 24px 0;
+		row-gap: 16px;
+	}
+
+	@media (max-width: 390.98px) {
+		margin: 0 0 20px 0;
+	}
+}
+
+.kicksClubTitle {
+	max-width: 600px;
+	margin: 0;
+	font-family: 'Rubik';
+	font-size: 2.25rem;
+	line-height: 1.19444444;
+
+	@media (max-width: 1100.98px) {
+		font-size: 1.875rem;
+	}
+
+	@media (max-width: 950.98px) {
+		font-size: 1.75rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 1.875rem;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 1.75rem;
+	}
+
+	@media (max-width: 370.98px) {
+		font-size: 1.5rem;
+	}
+}
+
+.kicksClubDescription {
+	color: rgba(35, 35, 33, 0.8);
+	margin: 0;
+	line-height: 1.375;
+
+	@media (max-width: 850.98px) {
+		font-size: 0.9375rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 1rem;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 0.875rem;
+	}
+}
+
+.kicksClubAdvantagesList {
+	margin: 0;
+	padding: 0;
+
+	@media (max-width: 850.98px) {
+		font-size: 0.9375rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 1rem;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 0.875rem;
+	}
+}
+
+.kicksClubAdvantagesList li {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	padding: 0 0 0 25px;
+	line-height: 1.375;
+	color: rgba(35, 35, 33, 0.8);
+
+	@media (max-width: 425.98px) {
+		padding: 0 0 0 20px;
+	}
+}
+
+.kicksClubAdvantagesList li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: rgba(35, 35, 33, 0.8);
+
+	@media (max-width: 425.98px) {
+		left: 8px;
+		top: 7px;
+	}
+}
+
+.kicksClubText {
+	margin: 0;
+	color: rgba(35, 35, 33, 0.8);
+	line-height: 1.375;
+
+	@media (max-width: 850.98px) {
+		font-size: 0.9375rem;
+	}
+
+	@media (max-width: 767.98px) {
+		font-size: 1rem;
+	}
+
+	@media (max-width: 425.98px) {
+		font-size: 0.875rem;
+	}
+}
+
+.kicksClubButtonWrapper {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+.kicksClubButtonWrapper button {
+	padding: 0 16px;
+	width: 100%;
+	justify-content: flex-start;
+}
+
+.arrowIconKicksClubButton {
+	position: absolute;
+	right: 18px;
+	top: 18px;
+}

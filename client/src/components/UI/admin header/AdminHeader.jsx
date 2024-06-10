@@ -72,7 +72,7 @@ const AdminHeader = observer(() => {
 						>
 							Admin
 						</button>
-						<div className={styles.spoilerBody}>
+						<div className={styles.spoilerBody} hidden={true}>
 							<h4 className={styles.spoilerTitle}>Admin</h4>
 							<div
 								onClick={handleGoHomePageButton}

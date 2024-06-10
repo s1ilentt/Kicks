@@ -1,6 +1,5 @@
 // Import
 const jwt = require('jsonwebtoken');
-const process = require('../config.json');
 
 // Function return middleware
 module.exports = function(role) {
@@ -14,7 +13,7 @@ module.exports = function(role) {
 			if (!token) {
 				return res.status(401).json({message: "Not authorization"});
 			}
-			const decoded = jwt.verify(token, process.SECRET_KEY); // Check the token for validity
+			const decoded = jwt.verify(token, process.env.SECRET_KEY); // Check the token for validity
 			// Validate role
 			if (decoded.role !== role) {
 				return res.status(403).json({message:"Not access"});

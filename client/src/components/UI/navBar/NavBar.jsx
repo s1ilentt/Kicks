@@ -3,7 +3,6 @@ import { Context } from '../../..';
 import Container from '../../container/Container.jsx';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ADMIN_ROUTE, BASKET_ROUTE, LANDING_ROUTE, LISTING_ROUTE, LOGIN_ROUTE } from '../../../utils/constsPath';
-import { Button } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite';
 import styles from './NavBar.module.scss';
 import { ReactComponent as Logo } from '../../../images/icon/logo.svg';
@@ -16,10 +15,12 @@ import SearchPage from '../../searchPage/SearchPage';
 import MenuBurger from '../menu/MenuBurger';
 import { GeneralContext } from '../../contexts/GeneralContextProvider';
 import { handleNavLinkClick } from '../../../utils/handleNavLinkClick';
+import Button from '../button/Button';
 
 const NavBar = observer(() => {
 	// Context provides access to shared data like user information and product details
 	const { allProducts } = useContext(Context);
+	const { product } = useContext(Context);
 	const { user } = useContext(Context);
 
 	const { isBlack, setIsBlack } = useContext(GeneralContext);
@@ -39,6 +40,7 @@ const NavBar = observer(() => {
 			logOut();
 		} else if (!user.isAuth) {
 			router(LOGIN_ROUTE);
+			handleNavLinkClick();
 		}
 	}
 
@@ -148,6 +150,12 @@ const NavBar = observer(() => {
 		user.setIsAuth(false);
 	}
 
+	const handleLinkType = (typeId) => {
+		product.setSelectedTypes([typeId]);
+		router(LISTING_ROUTE);
+		handleNavLinkClick();
+	}
+
 	return (
 		<header
 			className={`${styles.Navbar} ${isButtonClicked ? styles.NavbarActive : ''} ${isBlack ? styles.NavbarIsBlack : ''}`}
@@ -172,7 +180,13 @@ const NavBar = observer(() => {
 							</button>
 							<ul className={styles.list} hidden={true}>
 								{allProducts.types.map(type =>
-									<li key={type.id}>
+									<li
+										key={type.id}
+										onClick={() => {
+											handleLinkType(type.id);
+											product.setSelectedGenders(['men']);
+										}}
+									>
 										<span>
 											{type.name}
 										</span>
@@ -184,7 +198,13 @@ const NavBar = observer(() => {
 							</button>
 							<ul className={styles.list} hidden={true}>
 								{allProducts.types.map(type =>
-									<li key={type.id}>
+									<li
+										key={type.id}
+										onClick={() => {
+											handleLinkType(type.id);
+											product.setSelectedGenders(['women']);
+										}}
+									>
 										<span>
 											{type.name}
 										</span>
@@ -204,6 +224,23 @@ const NavBar = observer(() => {
 								0
 							</button>
 						</div>
+						{/* Depending on authority, we render button */}
+						{user.isAuth
+							?
+							<div className={styles.adminButtonWrapper}>
+								<Button
+									className={styles.adminButton}
+									background='black'
+									onClick={() => {
+										router(ADMIN_ROUTE);
+										handleNavLinkClick();
+									}}
+								>
+									Admin
+								</Button>
+							</div>
+							: null
+						}
 					</div>
 					<div>
 						<NavLink
@@ -249,18 +286,6 @@ const NavBar = observer(() => {
 								0
 							</button>
 						</div>
-						{/* Depending on authority, we render button */}
-						{user.isAuth
-							? <Button
-								onClick={() => {
-									router(ADMIN_ROUTE);
-									handleNavLinkClick();
-								}}
-							>
-								Admin panel
-							</Button>
-							: null
-						}
 					</div>
 				</nav>
 			</Container>

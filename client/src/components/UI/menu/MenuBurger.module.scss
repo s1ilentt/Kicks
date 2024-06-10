@@ -47,7 +47,7 @@
 	padding: 0;
 }
 
-.menuListItem:first-child {
+.menuListItem:first-child, .menuListItem:nth-child(2) {
 	padding: 20px 0;
 	border-bottom: 1px solid rgb(221, 221, 221);
 }

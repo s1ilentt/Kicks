@@ -8,6 +8,11 @@ export default class ProductStore {
 		this._products = [];
 		this._selectedType = {};
 		this._selectedBrand = {};
+		this._selectedTypes = [];
+		this._selectedPrice = 500;
+		this._selectedGenders = [];
+		this._selectedSizes = [];
+		this._selectedColors = [];
 		this._page = 1; // Defaul current page
 		this._totalCount = 0; // Defaul total count product
 		this._limitOnePage = 9; // Defaul limit product in one page
@@ -22,6 +27,26 @@ export default class ProductStore {
 	setSelectedBrand(brand) {
 		this.setPage(1); // Return to the first page of the list of products
 		this._selectedBrand = brand;
+	}
+	setSelectedTypes(types) {
+		this.setPage(1);
+		this._selectedTypes = types;
+	}
+	setSelectedPrice(price) {
+		this.setPage(1);
+		this._selectedPrice = price;
+	}
+	setSelectedGenders(genders) {
+		this.setPage(1);
+		this._selectedGenders = genders;
+	}
+	setSelectedSizes(sizes) {
+		this.setPage(1);
+		this._selectedSizes = sizes;
+	}
+	setSelectedColors(colors) {
+		this.setPage(1);
+		this._selectedColors = colors;
 	}
 	setTypes(types) {
 		this._types = types;
@@ -57,6 +82,21 @@ export default class ProductStore {
 	}
 	get selectedBrand() {
 		return this._selectedBrand;
+	}
+	get selectedTypes() {
+		return this._selectedTypes;
+	}
+	get selectedPrice() {
+		return this._selectedPrice;
+	}
+	get selectedGenders() {
+		return this._selectedGenders;
+	}
+	get selectedSizes() {
+		return this._selectedSizes;
+	}
+	get selectedColors() {
+		return this._selectedColors;
 	}
 	get page() {
 		return this._page;
